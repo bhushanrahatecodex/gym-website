@@ -1,0 +1,172 @@
+/* ===== GLOBAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+/* ===== HEADER ===== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #111;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: red;
+}
+
+/* BURGER MENU */
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: red;
+}
+
+
+/* ===== GALLERY FULL SECTION ===== */
+.gallery-full {
+    text-align: center;
+    padding: 60px 50px;
+}
+
+.gallery-full h1 {
+    color: red;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gallery-container img {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid red;
+    transition: transform 0.3s;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: #111;
+    padding: 20px;
+    text-align: center;
+}
+
+footer .social-links {
+    margin-top: 10px;
+}
+
+footer .social-links a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+footer .social-links a:hover {
+    color: red;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .gallery-container img {
+        width: 200px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery-container img {
+        width: 90%;
+        height: auto;
+        max-width: 300px;
+        margin-bottom: 15px;
+    }
+
+    .gallery-full h1 {
+        font-size: 28px;
+    }
+
+        .nav-links {
+            display: none;
+            /* By default hide */
+            flex-direction: column;
+            position: absolute;
+            top: 70px;
+            right: 20px;
+            background-color: #111;
+            width: 200px;
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1000;
+        }
+    
+        .nav-links.nav-active {
+            display: flex;
+            /* Show on toggle */
+        }
+    
+        .nav-links li {
+            margin: 15px 0;
+        }
+    
+        .burger {
+            display: flex;
+        }
+}
